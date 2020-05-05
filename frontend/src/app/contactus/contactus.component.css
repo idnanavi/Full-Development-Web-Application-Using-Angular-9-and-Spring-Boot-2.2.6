@@ -1,0 +1,28 @@
+.contact-container{
+    margin-top:100px;
+    margin-left:50px;
+    width:1100px;
+    padding-left: 150px;
+}
+.btn{
+    width: 500px;
+}
+textarea{
+    width: 500px;
+}
+#subject{
+    width: 500px;
+}
+#email{
+    width: 240px;
+}
+#name{
+    width: 240px;
+}
+.name{
+    padding-right: 20px;
+}
+.contact{
+   padding-top: 70px;
+   width: 500px;
+}

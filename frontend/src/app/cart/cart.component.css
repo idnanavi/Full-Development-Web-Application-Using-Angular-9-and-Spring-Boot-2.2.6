@@ -1,0 +1,24 @@
+.container{
+    padding-top:50px;
+    padding-left:150px;
+    width:100%;
+}
+
+*,::after,::before{
+    box-sizing: content-box;
+}
+.continue a{
+    font-size: small;
+}
+.form-control{
+   width:50%;
+}
+.product-name{
+    color:black;
+}
+.totals{
+    padding-top:40px;
+}
+.nocart{
+    padding-left: 140px;
+}

@@ -1,0 +1,60 @@
+<div *ngIf="show;else elseBlock" class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        
+                        <th class="text-center"></th>
+                        <th class="text-center">Price</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of items">
+                        <td class="col-sm-8 col-md-6">
+                        <div class="media">
+                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
+                            <div class="media-body">
+                                <h5 class="media-heading mt-3 ml-3"><a class ="product-name" href="#">{{item.name}}</a></h5>
+                            </div>
+                        </div></td>
+                        <td class="col-sm-1 col-md-1 text-center pt-4"><strong></strong></td>
+                        <td class="col-sm-1 col-md-1 text-center pt-4"><strong>{{item.price}}</strong></td>
+                        <td class="col-sm-1 col-md-1">
+                        <button type="button" class="btn btn-info mt-1" (click)="deleteItem(item.id)">
+                            <span class="glyphicon glyphicon-remove"></span> Remove
+                        </button></td>
+                    </tr>
+                    
+                  
+                    <tr>
+                        <td>  </td>
+                        <td>  <h3>Total</h3>  </td>
+                        <td class="totals"> <strong>{{total}}</strong> </td>
+                        <td></td>
+                        <td class="text-right"><h3><strong></strong></h3></td>
+                    </tr>
+                    <tr>
+                        <td>    </td>
+                        <td>    </td>
+                        <td class="continue" >  <a class="" href="">continue shopping</a> </td>
+                        <td >
+                            <button type="button" class="btn btn-success" (click)="addToDatabase()">
+                                Checkout <span class="glyphicon glyphicon-play"></span>
+                            </button>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<ng-template #elseBlock>
+    <div class="container">
+        <img src="https://cdn.dribbble.com/users/844846/screenshots/2981974/empty_cart_800x600_dribbble.png" class="nocart" alt="">
+    </div>
+</ng-template>

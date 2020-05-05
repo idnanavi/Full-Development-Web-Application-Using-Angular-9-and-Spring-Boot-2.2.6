@@ -1,0 +1,36 @@
+<div class="d-inline-flex">
+    <div class="sidenav">
+        <a routerLink="/products" (click)="reloadData()"><h3 id="product">Products</h3></a>
+        <a routerLink="/products" (click)="getGraduation()">Graduation</a>
+        <hr class="side">
+        <a routerLink="/products" (click)="getWedding()">Wedding</a>
+        <hr class="side">
+        <a routerLink="/products" (click)="getBirthday()">Birthday</a>
+        <hr class="side">
+        <a routerLink="/products" (click)="getEvent()">Event</a>
+        <hr class="side">
+        <a routerLink="/create-product" ><button class="btn btn-info btn-sm">Add Product</button></a>
+      </div>
+      <div class="container">
+        <div class="d-inline-flex mt-5">
+            <div class="row m-auto pt-3">
+                <div class="col-md-4 mb-3 pb-3 pt-3 product-grid" *ngFor="let pr of products| async" >
+                    <div class="image">
+                        <a href="">
+                            <img src="https://ecs7.tokopedia.net/img/cache/700/product-1/2018/9/18/6321607/6321607_ecaf370c-a357-4500-8c6e-64186f47d320_1280_1280.jpeg">
+                        </a>
+                        <h5 class="ml-4 desc" >{{pr.name}}</h5>
+                        <p class="description">{{pr.desc}}</p>
+                        <h6 class="ml-5">price : Rp {{pr.price}}</h6>
+                        <a class="ml-5 buy" routerLink="/products" (click)="addToCart(pr)">Buy</a>
+                        <div class="d-inline-flex wrapper pt-1">
+                            <button (click)="deleteProducts(pr.id)" class="btn btn-danger btn-md ml-5 mt-1">delete</button>
+                            <button (click)="updateEditId(pr.id)  " class="btn btn-success btn-md ml-1 mt-1">edit</button>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>

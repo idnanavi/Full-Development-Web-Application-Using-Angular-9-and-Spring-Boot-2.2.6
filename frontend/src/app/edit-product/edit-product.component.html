@@ -1,0 +1,52 @@
+<div class="container bg-light">
+    <form (ngSubmit)="save()">
+      <div class="row">
+        <div class="col-25">
+          <label for="name">Product name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="name" name="name" [(ngModel)]="product.name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="type">Product Type</label>
+        </div>
+        <div class="col-75">
+          <select id="type" name="type" [(ngModel)]="product.type">
+            <option value="graduation">Graduation</option>
+            <option value="weddings">Weddings</option>
+            <option value="birthday">Birthday</option>
+            <option value="event">Event</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="price">Product prices</label>
+        </div>
+        <div class="col-75">
+          <input type="number" class="w-100 mt-2" id="price" name="price" [(ngModel)]="product.price">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="desc">Product Description</label>
+        </div>
+        <div class="col-75">
+          <textarea id="desc" name="desc"  style="height:200px" [(ngModel)]="product.desc"></textarea>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+              <label for="image">Product Image</label>
+          </div>
+          <div class="col-75">
+              <input type="file" class="pt-2">
+          </div>
+      </div>
+      <div class="row button">
+        <input class="btn-info" type="submit" value="Submit" >
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,53 @@
+
+  <body class="text-center m-auto pt-5 login-container">
+  <form class="form-signin"  
+  *ngIf="!isLoggedIn"
+  name="form"
+  (ngSubmit)="f.form.valid && onSubmit()"
+  #f="ngForm"
+  novalidate>
+    <h1 class="h3 pt-5 mb-3 font-weight-normal">Log in</h1>
+    <input type="text"
+    class="form-control"
+    name="username"
+    [(ngModel)]="form.username"
+    required
+    #username="ngModel"
+    placeholder="Username">
+    <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+      <div *ngIf="username.errors.required">Username is required</div>
+      <div *ngIf="username.errors.minlength">
+        Username must be at least 3 characters
+      </div>
+      <div *ngIf="username.errors.maxlength">
+        Username must be at most 20 characters
+      </div>
+      </div>
+    <input type="password"
+    class="form-control"
+    name="password"
+    [(ngModel)]="form.password"
+    required
+    minlength="6"
+    #password="ngModel"
+    placeholder="Password">
+    <div class="checkbox mb-3">
+      <div class="alert-danger" *ngIf="f.submitted && password.invalid">
+        <div *ngIf="password.errors.required">Password is required</div>
+        <div *ngIf="password.errors.minlength">
+          Password must be at least 6 characters
+        </div>
+      </div>
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-info btn-block" type="submit">Sign in</button>
+    <p class="text-muted">or</p>
+    <a id="signuplink" routerLink="/signup"> create a new account</a>
+    <div class="alert alert-warning" *ngIf="f.submitted && isLoginFailed">
+      Signup failed!<br />{{ errorMessage }}
+    </div>
+  </form>
+  
+</body>
